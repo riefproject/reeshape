@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://2jnayay8fv7m"]
+
+[ext_resource type="Script" path="res://Scripts/Welcome.cs" id="1_058be"]
+[ext_resource type="Shader" path="res://Shaders/bg.gdshader" id="2_1xkwv"]
+[ext_resource type="FontFile" uid="uid://ckr2wxsv5pj0t" path="res://Assets/Fonts/Hoves-Bold.ttf" id="2_mwmp2"]
+[ext_resource type="Script" path="res://Scripts/Effects/texture_rect.gd" id="3_bdgm1"]
+[ext_resource type="Texture2D" uid="uid://c6ultel4w5w1p" path="res://Assets/Images/Bg.jpg" id="3_sebib"]
+[ext_resource type="Texture2D" uid="uid://bb82t3br78d6g" path="res://Assets/Images/Komgraf25.png" id="4_gnqog"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrtyi"]
+shader = ExtResource("2_1xkwv")
+shader_parameter/scroll = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujcm6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkgth"]
+resource_local_to_scene = true
+bg_color = Color(0.681011, 0.663408, 0.875738, 1)
+border_width_top = 3
+border_color = Color(0.642122, 0.620922, 0.855078, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyony"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 1)
+border_width_top = 3
+border_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amhya"]
+resource_local_to_scene = true
+bg_color = Color(0.004, 0.396, 0.675, 0.6)
+border_width_top = 3
+border_color = Color(0.00734803, 0.468341, 0.79103, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[node name="Welcome" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_058be")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_qrtyi")
+custom_minimum_size = Vector2(1200, 100)
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("3_sebib")
+script = ExtResource("3_bdgm1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
+layout_mode = 0
+offset_top = 188.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="BtnPlay" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "PLAY"
+
+[node name="BtnGuide" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "GUIDE"
+
+[node name="BtnAbout" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "ABOUT"
+
+[node name="BtnExit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "EXIT
+"
+
+[node name="Komgraf26" type="Sprite2D" parent="."]
+position = Vector2(654, 187)
+scale = Vector2(0.761818, 0.761818)
+texture = ExtResource("4_gnqog")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnPlay" to="." method="_on_BtnPlay_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnGuide" to="." method="_on_BtnGuide_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnAbout" to="." method="_on_BtnAbout_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnExit" to="." method="_on_BtnExit_pressed"]

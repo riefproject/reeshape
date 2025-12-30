@@ -1,0 +1,423 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpvrmljrnkwdv"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Pages/Welcome.cs" id="1_058be"]
+[ext_resource type="FontFile" uid="uid://ckr2wxsv5pj0t" path="res://Assets/Fonts/Hoves-Bold.ttf" id="2_mwmp2"]
+[ext_resource type="Texture2D" uid="uid://bb82t3br78d6g" path="res://Assets/Images/Komgraf25.png" id="4_gnqog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujcm6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkgth"]
+resource_local_to_scene = true
+bg_color = Color(0.016705, 0.538043, 0.902577, 1)
+border_width_top = 3
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyony"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 1)
+border_width_top = 3
+border_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amhya"]
+resource_local_to_scene = true
+bg_color = Color(0.004, 0.396, 0.675, 0.6)
+border_width_top = 3
+border_color = Color(0.00734803, 0.468341, 0.79103, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_settings_panel"]
+resource_local_to_scene = true
+bg_color = Color(0.0745098, 0.129412, 0.207843, 0.95)
+border_width_top = 2
+border_color = Color(0.239216, 0.588235, 0.894118, 0.85)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 18
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+resource_local_to_scene = true
+bg_color = Color(0.016705, 0.538043, 0.902577, 1)
+border_width_top = 1
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 1)
+border_width_top = 1
+border_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
+resource_local_to_scene = true
+bg_color = Color(0.004, 0.396, 0.675, 0.6)
+border_width_top = 1
+border_color = Color(0.00734803, 0.468341, 0.79103, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[node name="Welcome" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_058be")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.24
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="BtnPlay" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "PLAY"
+
+[node name="BtnGuide" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "GUIDE"
+
+[node name="BtnAbout" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "ABOUT"
+
+[node name="BtnSettings" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "SETTINGS"
+
+[node name="BtnExit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("2_mwmp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujcm6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkgth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gyony")
+theme_override_styles/normal = SubResource("StyleBoxFlat_amhya")
+text = "EXIT
+"
+
+[node name="HeaderGraphic" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.171
+anchor_right = 0.5
+anchor_bottom = 0.171
+offset_left = -384.0
+offset_top = -163.12
+offset_right = 384.0
+offset_bottom = 156.88
+grow_horizontal = 2
+texture = ExtResource("4_gnqog")
+stretch_mode = 3
+
+[node name="SettingsWindow" type="Control" parent="."]
+visible = false
+z_index = 50
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dimmer" type="ColorRect" parent="SettingsWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="PanelContainer" parent="SettingsWindow"]
+custom_minimum_size = Vector2(680, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -300.0
+offset_right = 340.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_settings_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsWindow/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="SettingsWindow/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="SettingsWindow/Panel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PENGATURAN & PROGRESS"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="SettingsWindow/Panel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pantau perkembangan stage dan kelola data progress."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ProgressPanel" type="PanelContainer" parent="SettingsWindow/Panel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ProgressMargin" type="MarginContainer" parent="SettingsWindow/Panel/MarginContainer/VBox/ProgressPanel"]
+layout_mode = 2
+
+[node name="ProgressVBox" type="VBoxContainer" parent="SettingsWindow/Panel/MarginContainer/VBox/ProgressPanel/ProgressMargin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ProgressScroll" type="ScrollContainer" parent="SettingsWindow/Panel/MarginContainer/VBox/ProgressPanel/ProgressMargin/ProgressVBox"]
+layout_mode = 2
+size_flags_vertical = 4
+horizontal_scroll_mode = 0
+
+[node name="ProgressList" type="VBoxContainer" parent="SettingsWindow/Panel/MarginContainer/VBox/ProgressPanel/ProgressMargin/ProgressVBox/ProgressScroll"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Separator" type="HSeparator" parent="SettingsWindow/Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="Actions" type="VBoxContainer" parent="SettingsWindow/Panel/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="OpenGuideButton" type="Button" parent="SettingsWindow/Panel/MarginContainer/VBox/Actions"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+text = "Buka Panduan (F1)"
+
+[node name="ResetDataButton" type="Button" parent="SettingsWindow/Panel/MarginContainer/VBox/Actions"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+text = "Reset Progress"
+
+[node name="ResetStatusLabel" type="Label" parent="SettingsWindow/Panel/MarginContainer/VBox/Actions"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseSettingsButton" type="Button" parent="SettingsWindow/Panel/MarginContainer/VBox/Actions"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+text = "Tutup"
+
+[node name="ResetConfirmOverlay" type="Control" parent="SettingsWindow"]
+visible = false
+z_index = 60
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dimmer" type="ColorRect" parent="SettingsWindow/ResetConfirmOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="PanelContainer" parent="SettingsWindow/ResetConfirmOverlay"]
+custom_minimum_size = Vector2(480, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -110.0
+offset_right = 240.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_settings_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsWindow/ResetConfirmOverlay/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="SettingsWindow/ResetConfirmOverlay/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="SettingsWindow/ResetConfirmOverlay/Panel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "KONFIRMASI RESET"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="SettingsWindow/ResetConfirmOverlay/Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Apakah Anda yakin ingin menghapus seluruh progress?
+Tindakan ini tidak bisa dibatalkan."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="SettingsWindow/ResetConfirmOverlay/Panel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="CancelButton" type="Button" parent="SettingsWindow/ResetConfirmOverlay/Panel/MarginContainer/VBox/Buttons"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+text = "Batal"
+
+[node name="ConfirmButton" type="Button" parent="SettingsWindow/ResetConfirmOverlay/Panel/MarginContainer/VBox/Buttons"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+text = "Ya, Reset"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnPlay" to="." method="_on_BtnPlay_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnGuide" to="." method="_on_BtnGuide_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnAbout" to="." method="_on_BtnAbout_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnSettings" to="." method="_on_BtnSettings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnExit" to="." method="_on_BtnExit_pressed"]

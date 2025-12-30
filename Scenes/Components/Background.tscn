@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://caetx02t8mk8b"]
+
+[ext_resource type="Script" path="res://Scripts/Effects/Background.gd" id="1_fbqu7"]
+[ext_resource type="Texture2D" uid="uid://qdhpusdjv1fd" path="res://Assets/Images/Bg2.png" id="2_rrqvi"]
+
+[node name="Background" type="CanvasLayer" node_paths=PackedStringArray("photo")]
+layer = -100
+script = ExtResource("1_fbqu7")
+photo = NodePath("photo")
+
+[node name="photo" type="Sprite2D" parent="."]
+position = Vector2(1974, 418)
+scale = Vector2(1.25586, 1.25586)
+texture = ExtResource("2_rrqvi")

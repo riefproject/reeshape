@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://bepc1gppgp53v"]
+
+[ext_resource type="Script" path="res://Scripts/Stages/TemplateBuilderStage.cs" id="1_ks4h1"]
+[ext_resource type="Script" path="res://Scripts/UI/Controls/BackBtn.cs" id="2_rj9xv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3w3f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq1yn"]
+resource_local_to_scene = true
+bg_color = Color(0.016705, 0.538043, 0.902577, 1)
+border_width_top = 1
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d3kh"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 1)
+border_width_top = 1
+border_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1ezc"]
+resource_local_to_scene = true
+bg_color = Color(0.004, 0.396, 0.675, 0.6)
+border_width_top = 1
+border_color = Color(0.00734803, 0.468341, 0.79103, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[node name="TemplateBuilder" type="Node2D"]
+script = ExtResource("1_ks4h1")
+SelectedStage = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_top = 649.0
+offset_right = 1281.0
+offset_bottom = 685.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="BtnBack" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c3w3f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq1yn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8d3kh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1ezc")
+text = "Back"
+script = ExtResource("2_rj9xv")
+
+[node name="ExportBtn" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c3w3f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq1yn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8d3kh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1ezc")
+text = "Export Layout"
+
+[node name="LoadBtn" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c3w3f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq1yn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8d3kh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1ezc")
+text = "Load Layout"
+
+[node name="ScalePanel" type="HBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ScaleLabel" type="Label" parent="HBoxContainer2/ScalePanel"]
+layout_mode = 2
+text = "Scale"
+vertical_alignment = 1
+
+[node name="ScaleSpin" type="SpinBox" parent="HBoxContainer2/ScalePanel"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 0.1
+max_value = 5.0
+step = 0.05
+value = 1.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Title" type="Label" parent="."]
+offset_top = 6.0
+offset_right = 1285.0
+offset_bottom = 29.0
+text = "TEMPLATE BUILDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer2/BtnBack" to="HBoxContainer2/BtnBack" method="_on_BtnBack_pressed"]
+[connection signal="pressed" from="HBoxContainer2/ExportBtn" to="." method="ExportLayout"]
+[connection signal="pressed" from="HBoxContainer2/LoadBtn" to="." method="LoadLayout"]

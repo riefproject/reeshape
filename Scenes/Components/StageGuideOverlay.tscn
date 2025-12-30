@@ -1,0 +1,165 @@
+[gd_scene load_steps=7 format=3 uid="uid://flapq7xxdx0w"]
+
+[ext_resource type="Script" path="res://Scripts/UI/StageGuideOverlay.cs" id="1_gh1c6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_overlay_panel"]
+resource_local_to_scene = true
+bg_color = Color(0.0745098, 0.129412, 0.207843, 0.95)
+border_width_top = 2
+border_color = Color(0.239216, 0.588235, 0.894118, 0.85)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 18
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+resource_local_to_scene = true
+bg_color = Color(0.016705, 0.538043, 0.902577, 1)
+border_width_top = 1
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 1)
+border_width_top = 1
+border_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
+resource_local_to_scene = true
+bg_color = Color(0.004, 0.396, 0.675, 0.6)
+border_width_top = 1
+border_color = Color(0.00734803, 0.468341, 0.79103, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[node name="StageGuideOverlay" type="Control"]
+visible = false
+z_index = 45
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gh1c6")
+
+[node name="Dimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1080, 580)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -290.0
+offset_right = 540.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_overlay_panel")
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+custom_minimum_size = Vector2(976, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GUIDE"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Summary" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cara bermain:"
+autowrap_mode = 2
+
+[node name="GameplayText" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Susun shape di library ke outline abu-abu sampai bentuk cocok."
+autowrap_mode = 2
+
+[node name="Divider" type="ColorRect" parent="Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(0.215686, 0.305882, 0.403922, 0.75)
+
+[node name="ControlsLabel" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+text = "Kontrol:"
+
+[node name="ControlsList" type="RichTextLabel" parent="Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "  text = "
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 2
+
+[node name="CloseButton" type="Button" parent="Panel/Margin/VBox/Buttons"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+text = "Tutup"

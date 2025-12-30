@@ -1,0 +1,268 @@
+[gd_scene load_steps=14 format=3 uid="uid://nojcglhyeuyh"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Pages/Guide.cs" id="1_l2xgk"]
+[ext_resource type="FontFile" uid="uid://ckr2wxsv5pj0t" path="res://Assets/Fonts/Hoves-Bold.ttf" id="5_w2lgr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr885"]
+bg_color = Color(0.004, 0.396, 0.675, 0.493)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_748wy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjk3y"]
+resource_local_to_scene = true
+bg_color = Color(0.0156863, 0.537255, 0.901961, 1)
+border_width_top = 3
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.301961)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcr41"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+border_width_top = 3
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.301961)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5q0m"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+border_width_top = 3
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.301961)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4da2l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ato5d"]
+resource_local_to_scene = true
+bg_color = Color(0.016705, 0.538043, 0.902577, 1)
+border_width_top = 1
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd08x"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 1)
+border_width_top = 1
+border_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxbet"]
+resource_local_to_scene = true
+bg_color = Color(0.004, 0.396, 0.675, 0.6)
+border_width_top = 1
+border_color = Color(0.00734803, 0.468341, 0.79103, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx7yh"]
+resource_local_to_scene = true
+bg_color = Color(0.004, 0.396, 0.675, 0.6)
+border_width_top = 1
+border_color = Color(0.00734803, 0.468341, 0.79103, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jajh5"]
+
+[node name="Guide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l2xgk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.2
+anchor_right = 0.92
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qr885")
+
+[node name="Title" type="Label" parent="."]
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.062
+anchor_right = 0.5
+anchor_bottom = 0.062
+offset_left = -200.0
+offset_top = -39.64
+offset_right = 200.0
+offset_bottom = 40.36
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_w2lgr")
+theme_override_font_sizes/font_size = 50
+text = "GUIDE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.88
+anchor_right = 0.7
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="BtnBack" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(175, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_fonts/font = ExtResource("5_w2lgr")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxEmpty_748wy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjk3y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jcr41")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y5q0m")
+text = "Back"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.16
+anchor_right = 0.8
+anchor_bottom = 0.22
+offset_top = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PrevButton" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4da2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ato5d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sd08x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxbet")
+text = " << "
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_w2lgr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cx7yh")
+text = "Kontrol Dasar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextButton" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jajh5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ato5d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sd08x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxbet")
+text = " >> "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.82
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Desc" type="Label" parent="VBoxContainer"]
+z_index = 5
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_w2lgr")
+theme_override_font_sizes/font_size = 18
+text = "Tekan tombol [Guide] atau F1 di dalam stage kapan pun untuk membuka ringkasan kontrol beserta tips khusus tantangan."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SubTitle" type="Label" parent="VBoxContainer"]
+z_index = 5
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_w2lgr")
+theme_override_font_sizes/font_size = 18
+text = "Manipulasi shape"
+vertical_alignment = 1
+
+[node name="Point" type="Label" parent="VBoxContainer"]
+z_index = 5
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_w2lgr")
+theme_override_font_sizes/font_size = 18
+text = "- Klik shape di palet untuk memunculkannya lalu drag ke siluet.
+- Putar dengan Q / E, translasi presisi pakai WASD atau tombol arah.
+- Scroll untuk zoom, tahan klik tengah (MMB) untuk pan viewport.
+- Klik kanan menghapus shape dan mengembalikannya ke palet."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/BtnBack" to="." method="_on_BtnBack_pressed"]

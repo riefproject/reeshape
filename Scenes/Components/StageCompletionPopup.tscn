@@ -1,0 +1,275 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjmjym3d52m6n"]
+
+[ext_resource type="Script" path="res://Scripts/UI/StageCompletionPopup.cs" id="1_0n6k3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2p7n"]
+resource_local_to_scene = true
+bg_color = Color(0.0705882, 0.141176, 0.215686, 0.94)
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.239216, 0.588235, 0.894118, 0.85)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 16
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_metrics"]
+resource_local_to_scene = true
+bg_color = Color(0.109804, 0.172549, 0.27451, 0.82)
+border_width_top = 1
+border_color = Color(0.25098, 0.607843, 0.917647, 0.8)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_metric_card"]
+resource_local_to_scene = true
+bg_color = Color(0.164706, 0.235294, 0.352941, 0.9)
+border_width_top = 1
+border_color = Color(0.266667, 0.709804, 0.956863, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_button_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_normal"]
+resource_local_to_scene = true
+bg_color = Color(0.004, 0.396, 0.675, 0.6)
+border_width_top = 1
+border_color = Color(0.00734803, 0.468341, 0.79103, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+resource_local_to_scene = true
+bg_color = Color(0.016705, 0.538043, 0.902577, 1)
+border_width_top = 1
+border_color = Color(0.00784314, 0.466667, 0.792157, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_pressed"]
+resource_local_to_scene = true
+bg_color = Color(0.00392157, 0.396078, 0.67451, 1)
+border_width_top = 1
+border_color = Color(0.00392157, 0.396078, 0.67451, 0.6)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
+[node name="StageCompletionPopup" type="Control"]
+visible = false
+z_index = 40
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_0n6k3")
+
+[node name="Dimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(560, 360)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -200.0
+offset_right = 280.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2p7n")
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="TitleLabel" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Stage selesai!"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="MetricsPanel" type="PanelContainer" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_metrics")
+
+[node name="MetricsMargin" type="MarginContainer" parent="Panel/Margin/VBox/MetricsPanel"]
+layout_mode = 2
+
+[node name="Metrics" type="HBoxContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="MetricTime" type="PanelContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_metric_card")
+
+[node name="MetricTimeMargin" type="MarginContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricTime"]
+layout_mode = 2
+
+[node name="MetricTimeVBox" type="VBoxContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricTime/MetricTimeMargin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TimeTitle" type="Label" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricTime/MetricTimeMargin/MetricTimeVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Waktu selesai"
+horizontal_alignment = 1
+
+[node name="TimeValue" type="Label" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricTime/MetricTimeMargin/MetricTimeVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "00:00.00"
+horizontal_alignment = 1
+
+[node name="MetricBest" type="PanelContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_metric_card")
+
+[node name="MetricBestMargin" type="MarginContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricBest"]
+layout_mode = 2
+
+[node name="MetricBestVBox" type="VBoxContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricBest/MetricBestMargin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BestTitle" type="Label" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricBest/MetricBestMargin/MetricBestVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Rekor tercepat"
+horizontal_alignment = 1
+
+[node name="BestValue" type="Label" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricBest/MetricBestMargin/MetricBestVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "--"
+horizontal_alignment = 1
+
+[node name="MetricAccuracy" type="PanelContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_metric_card")
+
+[node name="MetricAccuracyMargin" type="MarginContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricAccuracy"]
+layout_mode = 2
+
+[node name="MetricAccuracyVBox" type="VBoxContainer" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricAccuracy/MetricAccuracyMargin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="AccuracyTitle" type="Label" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricAccuracy/MetricAccuracyMargin/MetricAccuracyVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Akurasi"
+horizontal_alignment = 1
+
+[node name="AccuracyValue" type="Label" parent="Panel/Margin/VBox/MetricsPanel/MetricsMargin/Metrics/MetricAccuracy/MetricAccuracyMargin/MetricAccuracyVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0%"
+horizontal_alignment = 1
+
+[node name="RecordLabel" type="Label" parent="Panel/Margin/VBox"]
+visible = false
+layout_mode = 2
+text = "Rekor baru!"
+horizontal_alignment = 1
+
+[node name="StatsSummary" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="ReplayButton" type="Button" parent="Panel/Margin/VBox/Buttons"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_button_focus")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+text = "Main Lagi"
+
+[node name="CloseButton" type="Button" parent="Panel/Margin/VBox/Buttons"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_button_focus")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+text = "Lanjut Stage"
+
+[node name="BackButton" type="Button" parent="Panel/Margin/VBox/Buttons"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902951, 0.924722, 0.912399, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_button_focus")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+text = "Buka PLAY"
