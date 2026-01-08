@@ -1,1 +1,120 @@
-null
+{
+    "name": "UFO Stage",
+    "scale": 1.0,
+    "shapes": [
+        {
+            "type": "Segitiga",
+            "x": 342,
+            "y": 284,
+            "angle": 0
+        },
+        {
+            "type": "Segitiga",
+            "x": 342,
+            "y": 346,
+            "angle": -180
+        },
+        {
+            "type": "Trapesium",
+            "x": 415,
+            "y": 347,
+            "angle": 0
+        },
+        {
+            "type": "Trapesium",
+            "x": 415,
+            "y": 283,
+            "angle": -180
+        },
+        {
+            "type": "Jajar Genjang",
+            "x": 508,
+            "y": 283,
+            "angle": 0
+        },
+        {
+            "type": "Jajar Genjang",
+            "x": 508,
+            "y": 348,
+            "angle": -60
+        },
+        {
+            "type": "Hexagon",
+            "x": 601,
+            "y": 316,
+            "angle": -90
+        },
+        {
+            "type": "Trapesium",
+            "x": 523,
+            "y": 219,
+            "angle": 0
+        },
+        {
+            "type": "Segitiga",
+            "x": 597,
+            "y": 218,
+            "angle": -180
+        },
+        {
+            "type": "Trapesium",
+            "x": 671,
+            "y": 219,
+            "angle": 0
+        },
+        {
+            "type": "Trapesium",
+            "x": 785,
+            "y": 347,
+            "angle": 0
+        },
+        {
+            "type": "Jajar Genjang",
+            "x": 692,
+            "y": 348,
+            "angle": 0
+        },
+        {
+            "type": "Jajar Genjang",
+            "x": 692,
+            "y": 284,
+            "angle": 120
+        },
+        {
+            "type": "Trapesium",
+            "x": 785,
+            "y": 284,
+            "angle": -180
+        },
+        {
+            "type": "Segitiga",
+            "x": 597,
+            "y": 156,
+            "angle": 0
+        },
+        {
+            "type": "Segitiga",
+            "x": 858,
+            "y": 286,
+            "angle": 0
+        },
+        {
+            "type": "Segitiga",
+            "x": 858,
+            "y": 348,
+            "angle": -180
+        },
+        {
+            "type": "Jajar Genjang",
+            "x": 433,
+            "y": 410,
+            "angle": 0
+        },
+        {
+            "type": "Jajar Genjang",
+            "x": 768,
+            "y": 410,
+            "angle": -60
+        }
+    ]
+}
